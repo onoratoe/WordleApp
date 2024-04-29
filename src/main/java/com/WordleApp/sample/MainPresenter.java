@@ -34,7 +34,6 @@ public class MainPresenter {
                 appBar.setTitleText("WordleApp");
             }
         });
-        label.setText(String.format(resources.getString("label.text"), "JavaFX", javafxVersion));
     }
 
     @FXML
