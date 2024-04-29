@@ -10,7 +10,11 @@ public class GameView {
 
     public View getView() {
         try {
-            View view = FXMLLoader.load(GameView.class.getResource("GameScreen.fxml"), ResourceBundle.getBundle("com.WordleApp.sample.main"));
+            FXMLLoader loader = new FXMLLoader(GameView.class.getResource("GameScreen.fxml"), ResourceBundle.getBundle("com.WordleApp.sample.main"));
+            View view = loader.load();
+            GameController cont = loader.getController();
+            cont.setup(new GameInstance());
+
             return view;
         } catch (IOException e) {
             System.out.println("IOException: " + e);

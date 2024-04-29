@@ -31,30 +31,18 @@ public class Letter {
 	 */
 	public void updateColor(String color){
         switch (color.toLowerCase()) {
-			case ("gray") : {
-				this.color = "#3a3a3c";
-			}
-			case ("grey") : {
-				this.color = "#3a3a3c";
-			}
-			case ("groy") : {
-				this.color = "#3a3a3c";
-			}
-			case ("griy") : {
-				this.color = "#3a3a3c";
-			}
-			case ("gruy") : {
-				this.color = "#3a3a3c";
-			}
-			case ("yellow") : {
-				this.color = "#b29f31";
-			}
-			case ("green") : {
-				this.color = "#5a8d4b";
-			}
-			default : {
-				throw new IllegalArgumentException("Green is not a creative color");
-			}
+            case ("gray"), ("grey"), ("groy"), ("griy"), ("gruy") -> {
+                this.color = "#3a3a3c";
+            }
+            case ("yellow") -> {
+                this.color = "#b29f31";
+            }
+            case ("green") -> {
+                this.color = "#5a8d4b";
+            }
+            default -> {
+                throw new IllegalArgumentException("Green is not a creative color");
+            }
         }
 	}
 

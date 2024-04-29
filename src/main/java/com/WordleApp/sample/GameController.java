@@ -168,40 +168,38 @@ public class GameController {
 
 
 	private void keyInput(String input){
-		if (gameBox.isVisible()) {
-			if (!currentGame.getGameEnded()) {
-                switch (input) {
-					case "⌫" : {
-                        if (!inputStack.isEmpty()) inputStack.pop();
-                        backSpaceRow();
-                    }
-					case "ENTER" : {
-                        if (inputStack.size() == currentGame.getTarget().length() && gameStep() != -1) {
-                            inputStack.clear();
-                            colorTiles();
-                            if (currentGame.getHintUsed()) {
-                                disableHint();
-                            }
+        if (!currentGame.getGameEnded()) {
+            switch (input) {
+                case "⌫": {
+                    if (!inputStack.isEmpty()) inputStack.pop();
+                    backSpaceRow();
+                }
+                case "ENTER": {
+                    if (inputStack.size() == currentGame.getTarget().length() && gameStep() != -1) {
+                        inputStack.clear();
+                        colorTiles();
+                        if (currentGame.getHintUsed()) {
+                            disableHint();
                         }
                     }
-					case "BACK_SPACE": {
-                        if (!inputStack.isEmpty()) inputStack.pop();
-                        backSpaceRow();
+                }
+                case "BACK_SPACE": {
+                    if (!inputStack.isEmpty()) inputStack.pop();
+                    backSpaceRow();
+                }
+                default: {
+//System.out.println("DEFAULT");
+                    if (input.length() == 1 && inputStack.size() < currentGame.getWordLength()) {
+                        inputStack.add(input.charAt(0));
+                        updateRow();
                     }
-					default : {
-						//System.out.println("DEFAULT");
-						if (input.length() == 1 && inputStack.size() < currentGame.getWordLength()) {
-							inputStack.add(input.charAt(0));
-							updateRow();
-						}
-					}
-					break;
-				}
-			} else {
-				displayEndDialog();
-			}
-		}
-	}
+                }
+                break;
+            }
+        } else {
+            displayEndDialog();
+        }
+    }
 
 	private void disableHint(){
 		currentGame.updateHintUsed(true);
@@ -515,19 +513,9 @@ public class GameController {
 		fillRow2(keyRow2);
 		fillRow3(keyRow3);
 
-		//TODO either remove or add exception handling
-		ImageView logo = (ImageView) anchor.lookup("#logo");
-		URL logoUrl = (getClass().getResource("/images/TheYorkTimesLogo.png"));
-		logo.setImage(new Image(logoUrl.toString()));
 
-		//Your actions fill me with fear
-		ImageView gameExample = (ImageView) anchor.lookup("#gameExample");
-		URL gameExampleUrl = (getClass().getResource("/images/GameExample.png"));
-		gameExample.setImage(new Image(gameExampleUrl.toString()));
 
 		enableHint();
-
-		usernameEntry.setOnKeyPressed(usernameEntryInput);
 		//Debug feature
 
 	}
