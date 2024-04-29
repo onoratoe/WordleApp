@@ -259,11 +259,7 @@ public class Controller {
 	}
 	@FXML
 	private void letsPlay(){
-		gameBox.setVisible(true);
-		homeBox.setVisible(false);
-		helpBox.setVisible(false);
 		hintHelpBox.setVisible(false);
-		adminBox.setVisible(false);
 	}
 
 	@FXML
