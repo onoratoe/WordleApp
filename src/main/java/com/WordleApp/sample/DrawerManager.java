@@ -12,8 +12,7 @@ import com.gluonhq.charm.glisten.control.NavigationDrawer.ViewItem;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 import javafx.scene.image.Image;
 
-import static com.WordleApp.sample.Main.MAIN_VIEW;
-import static com.WordleApp.sample.Main.SECOND_VIEW;
+import static com.WordleApp.sample.Home.MAIN_VIEW;
 
 public class DrawerManager {
 

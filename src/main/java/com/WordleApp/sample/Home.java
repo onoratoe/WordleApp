@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 import static com.gluonhq.charm.glisten.application.AppManager.HOME_VIEW;
 import static com.gluonhq.charm.glisten.application.AppManager.SPLASH_VIEW;
 
-public class Main extends Application {
+public class Home extends Application {
 
     public static final String MAIN_VIEW = HOME_VIEW;
     public static final String SECOND_VIEW = SPLASH_VIEW;
@@ -22,8 +22,8 @@ public class Main extends Application {
 
     @Override
     public void init() {
-        appManager.addViewFactory(MAIN_VIEW, () -> new MainView().getView());
-        appManager.addViewFactory(SECOND_VIEW, () -> new SecondView().getView());
+        appManager.addViewFactory(MAIN_VIEW, () -> new HomeView().getView());
+        appManager.addViewFactory(SECOND_VIEW, () -> new GameView().getView());
 
         DrawerManager.buildDrawer(appManager);
     }
@@ -35,8 +35,8 @@ public class Main extends Application {
 
     private void postInit(Scene scene) {
         Swatch.LIGHT_GREEN.assignTo(scene);
-        scene.getStylesheets().add(Main.class.getResource("styles.css").toExternalForm());
-        ((Stage) scene.getWindow()).getIcons().add(new Image(Main.class.getResourceAsStream("/icon.png")));
+        scene.getStylesheets().add(Home.class.getResource("styles.css").toExternalForm());
+        ((Stage) scene.getWindow()).getIcons().add(new Image(Home.class.getResourceAsStream("/icon.png")));
 
         if (Platform.isDesktop()) {
             Dimension2D dimension2D = DisplayService.create()

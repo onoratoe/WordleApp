@@ -1,7 +1,7 @@
 package com.WordleApp.sample;
 
-public class Starter {
+public class Launcher {
     public static void main(String[] args) {
-        Main.main(args);
+        Home.main(args);
     }
 }

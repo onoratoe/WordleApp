@@ -4,13 +4,14 @@ import com.gluonhq.charm.glisten.application.AppManager;
 import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
-import java.util.Random;
-import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 
-public class MainPresenter {
+import java.util.Random;
+import java.util.ResourceBundle;
+
+public class GamePresenter {
 
     private final String javafxVersion = System.getProperty("javafx.version");
 
@@ -34,6 +35,7 @@ public class MainPresenter {
                 appBar.setTitleText("WordleApp");
             }
         });
+        label.setText(String.format(resources.getString("label.text"), "JavaFX", javafxVersion));
     }
 
     @FXML

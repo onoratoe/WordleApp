@@ -19,7 +19,7 @@
         <gluonfx.plugin.version>1.0.22</gluonfx.plugin.version>
         <charm.version>6.2.3</charm.version>
         <attach.version>4.0.19</attach.version>
-        <main.class>com.WordleApp.sample.Main</main.class>
+        <main.class>com.WordleApp.sample.Home</main.class>
     </properties>
 
     <dependencies>
