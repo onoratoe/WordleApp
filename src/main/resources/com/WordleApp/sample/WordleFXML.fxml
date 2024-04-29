@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.mvc.View?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<View id="anchor" fx:id="anchor" focusTraversable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.WordleApp.sample.Controller">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox id="hintHelpBox" fx:id="hintHelpBox" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: black;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="84.0" prefWidth="746.0" style="-fx-background-color: black;">
+                     <children>
+                        <Label focusTraversable="false" text="Hint Information" textFill="WHITE" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="52.0" />
+                           </font>
+                           <padding>
+                              <Insets left="80.0" />
+                           </padding>
+                        </Label>
+                        <Button focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letsPlay" style="-fx-background-color: #242424; -fx-border-color: darkgrey; -fx-border-width: 2;" text="✕" textFill="WHITE">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="900.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="The hint button is a single use button">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER">
+                     <children>
+                        <TextField alignment="TOP_LEFT" editable="false" focusTraversable="false" prefHeight="51.0" prefWidth="866.0" style="-fx-text-fill: white; -fx-background-color: black;" text="It will show one correct letter from the target word, going from left to right">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="42.0" prefWidth="900.0">
+                     <children>
+                        <TextField alignment="TOP_LEFT" editable="false" focusTraversable="false" prefHeight="34.0" prefWidth="800.0" style="-fx-text-fill: white; -fx-background-color: black;" text="The hint will skip over letters you have already found in the target word">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="661.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="For Example" wrappingWidth="202.28985595703125">
+                           <font>
+                              <Font name="System Italic" size="30.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </HBox>
+                  <VBox alignment="CENTER" prefHeight="450.0" prefWidth="900.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="451.0" prefWidth="338.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="451.0" prefWidth="450.0">
+                                 <children>
+                                    <ImageView id="gameExample" fx:id="gameExample1" fitHeight="450.0" fitWidth="413.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/Worlde-Hint-Example.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <padding>
+                                    <Insets left="65.0" />
+                                 </padding>
+                              </HBox>
+                              <VBox alignment="CENTER" prefHeight="450.0" prefWidth="450.0">
+                                 <children>
+                                    <Text fill="WHITE" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="The hint fills your current row up until the letter to give as a hint" textAlignment="CENTER" wrappingWidth="380.0">
+                                       <VBox.margin>
+                                          <Insets bottom="25.0" top="20.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="The letter will also appear yellow on the keyboard visual as a reminder of what letter it was (but not its placement!)" textAlignment="CENTER" wrappingWidth="380.0">
+                                       <VBox.margin>
+                                          <Insets bottom="25.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+              <VBox id="helpBox" fx:id="helpBox" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: black;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                      <HBox alignment="CENTER" prefHeight="80.0" prefWidth="900.0" style="-fx-background-color: black;">
+                          <children>
+                              <Button minWidth="50.0" mnemonicParsing="false" onAction="#home" prefHeight="70.0" prefWidth="275.0" style="-fx-background-color: black;" text="🏠                  " textFill="WHITE">
+                                  <HBox.margin>
+                                      <Insets top="10.0" />
+                                  </HBox.margin>
+                                  <font>
+                                      <Font size="30.0" />
+                                  </font>
+                              </Button>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="How To Play" textAlignment="CENTER" wrappingWidth="320.0">
+                                  <font>
+                                      <Font size="52.0" />
+                                  </font>
+                                  <HBox.margin>
+                                      <Insets left="15.0" right="300.0" />
+                                  </HBox.margin>
+                              </Text>
+                          </children>
+                      </HBox>
+                      <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="900.0">
+                          <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="The Goal is to guess the Wordle in 6 tries">
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                              </Text>
+                          </children>
+                      </HBox>
+                      <HBox alignment="TOP_CENTER" prefHeight="17.0" prefWidth="900.0">
+                          <children>
+                              <TextField alignment="TOP_LEFT" editable="false" focusTraversable="false" prefHeight="17.0" prefWidth="800.0" style="-fx-text-fill: white; -fx-background-color: black;" text="Each guess has to be a valid guess, based on our dicitonary">
+                                  <font>
+                                      <Font size="20.0" />
+                                  </font>
+                              </TextField>
+                          </children>
+                      </HBox>
+                      <HBox alignment="TOP_CENTER" prefHeight="42.0" prefWidth="900.0">
+                          <children>
+                              <TextField alignment="TOP_LEFT" editable="false" focusTraversable="false" prefHeight="34.0" prefWidth="800.0" style="-fx-text-fill: white; -fx-background-color: black;" text="For each Correct letter guessed, the color of the tiles will change based on that guess">
+                                  <font>
+                                      <Font size="20.0" />
+                                  </font>
+                              </TextField>
+                          </children>
+                      </HBox>
+                      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="661.0">
+                          <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="For Example" wrappingWidth="168.68988037109375">
+                                  <font>
+                                      <Font name="System Italic" size="30.0" />
+                                  </font>
+                              </Text>
+                          </children>
+                          <VBox.margin>
+                              <Insets />
+                          </VBox.margin>
+                          <padding>
+                              <Insets left="60.0" />
+                          </padding>
+                      </HBox>
+                        <HBox alignment="CENTER" prefHeight="451.0" prefWidth="338.0">
+                            <children>
+                                  <ImageView id="gameExample" fx:id="gameExample" fitHeight="441.0" fitWidth="398.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/GameExample.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ImageView>
+                                <VBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="450.0">
+                                    <children>
+                                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Assuming You entered a Vaild word" textAlignment="CENTER" wrappingWidth="400.0">
+                                            <VBox.margin>
+                                                <Insets bottom="30.0" top="20.0" />
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Text>
+                                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Gray means that the letter guessed is not in the word" textAlignment="CENTER" wrappingWidth="400.0">
+                                            <VBox.margin>
+                                                <Insets bottom="30.0" />
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Text>
+                                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Yellow means that the letter guessed is in the word, but its not in the correct location" textAlignment="CENTER" wrappingWidth="400.0">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets bottom="30.0" />
+                                            </VBox.margin>
+                                        </Text>
+                                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Green means that the letter is in the word, and it's in the correct location" textAlignment="CENTER" wrappingWidth="400.0">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets bottom="30.0" />
+                                            </VBox.margin>
+                                        </Text>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                  </children>
+              </VBox>
+            <AnchorPane fx:id="homeBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                    <VBox id="logInBox" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <children>
+                            <HBox alignment="CENTER" style="-fx-background-color: black;">
+                                <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Wordle" textAlignment="CENTER" wrappingWidth="215.58308029174805">
+                                        <font>
+                                            <Font size="52.0" />
+                                        </font>
+                                    </Text>
+                                </children>
+                                <padding>
+                                    <Insets top="15.0" />
+                                </padding>
+                            </HBox>
+                            <HBox alignment="CENTER" style="-fx-background-color: black;">
+                                <children>
+                                    <ImageView id="logo" fx:id="logo" fitHeight="432.0" fitWidth="420.0" pickOnBounds="true" preserveRatio="true" />
+                                </children>
+                            </HBox>
+                            <HBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="900.0" style="-fx-background-color: black;">
+                                <children>
+                                    <Button focusTraversable="false" mnemonicParsing="false" onAction="#help" prefHeight="54.0" prefWidth="99.0" style="-fx-background-color: black; -fx-border-width: 2; -fx-border-color: darkgrey;" text="How To Play" textFill="WHITE">
+                                        <HBox.margin>
+                                            <Insets right="10.0" />
+                                        </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="logInOpenButton" focusTraversable="false" mnemonicParsing="false" onAction="#logInOpen" prefHeight="54.0" prefWidth="99.0" style="-fx-background-color: black; -fx-border-width: 2; -fx-border-color: darkgrey;" text="Log in" textFill="WHITE">
+                                        <HBox.margin>
+                                            <Insets right="10.0" />
+                                        </HBox.margin>
+                                    </Button>
+                                    <Button focusTraversable="false" mnemonicParsing="false" onAction="#play" prefHeight="54.0" prefWidth="99.0" style="-fx-background-color: black; -fx-border-width: 2; -fx-border-color: darkgrey;" text="Play" textFill="WHITE" />
+                                    <Button focusTraversable="false" mnemonicParsing="false" onAction="#adminMenuButton" prefHeight="54.0" prefWidth="99.0" style="-fx-background-color: black; -fx-border-color: darkgray; -fx-border-width: 2;" text="Stats" textFill="WHITE">
+                                        <HBox.margin>
+                                            <Insets left="10.0" />
+                                        </HBox.margin>
+                                    </Button>
+                                </children>
+                            </HBox>
+                            <HBox alignment="TOP_CENTER" prefHeight="125.0" prefWidth="900.0">
+                                <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Created By: Estevan Onorato, Eric Van Zant, Dominic Zagra, and Daniel Portwine" textAlignment="CENTER" wrappingWidth="899.1296066045761" />
+                                </children>
+                            </HBox>
+                        </children>
+                    </VBox>
+                  <AnchorPane fx:id="gameGrayOut1" opacity="0.75" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: black;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <AnchorPane fx:id="logInBox" layoutX="300.0" layoutY="89.0" prefHeight="270.0" prefWidth="300.0" style="-fx-background-color: black; -fx-border-color: white; -fx-border-width: 5px;" visible="false" AnchorPane.leftAnchor="-150.0" AnchorPane.rightAnchor="-150.0">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="27.0" layoutY="22.0" prefHeight="43.0" prefWidth="270.0" AnchorPane.bottomAnchor="414.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="17.0">
+                           <children>
+                              <Button fx:id="backButton" focusTraversable="false" mnemonicParsing="false" onAction="#backButtonL" prefHeight="35.0" prefWidth="50.0" style="-fx-background-color: black;" text="🡄" textFill="WHITE" visible="false">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                              <Label fx:id="logInHeading" alignment="CENTER" focusTraversable="false" prefHeight="30.0" prefWidth="160.0" text="Log In" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Button focusTraversable="false" mnemonicParsing="false" onAction="#exitButtonL" prefHeight="35.0" prefWidth="50.0" style="-fx-background-color: black;" text="✖" textFill="WHITE">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <VBox alignment="CENTER" layoutX="26.0" layoutY="250.0" prefHeight="219.0" prefWidth="245.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="245.0">
+                           <children>
+                              <Button fx:id="createAccountButton" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#createAccountButton" prefHeight="40.0" prefWidth="115.0" style="-fx-background-color: black; -fx-border-color: darkgray; -fx-border-width: 2;" text="Create Account" textAlignment="CENTER" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets bottom="40.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#logInButton" prefHeight="40.0" prefWidth="115.0" style="-fx-background-color: black; -fx-border-color: darkgray; -fx-border-width: 2;" text="Log In" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </VBox>
+                        <HBox layoutX="30.0" layoutY="70.0" prefHeight="32.0" prefWidth="254.0" AnchorPane.bottomAnchor="377.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="65.0">
+                           <children>
+                              <Label fx:id="logInResult" alignment="CENTER" focusTraversable="false" prefHeight="22.0" prefWidth="248.0" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="130.0" prefHeight="49.0" prefWidth="290.0" AnchorPane.bottomAnchor="280.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="125.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="22.0" prefWidth="90.0" text="Username:" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="usernameEntry" focusTraversable="false" prefHeight="29.0" prefWidth="169.0" style="-fx-background-color: black; -fx-border-color: darkgrey; -fx-border-width: 2; -fx-text-fill: white;" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="19.0" layoutY="201.0" prefHeight="39.0" prefWidth="280.0" AnchorPane.bottomAnchor="239.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="196.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="22.0" prefWidth="82.0" text="Password:" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <PasswordField fx:id="passwordEntry" onAction="#logInButton" prefHeight="30.0" prefWidth="169.0" style="-fx-background-color: black; -fx-border-color: darkgrey; -fx-border-width: 2px; -fx-text-fill: white;" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+              <AnchorPane fx:id="gameBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                      <VBox id="gameBox" alignment="CENTER" prefHeight="764.0" prefWidth="920.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <children>
+                              <HBox alignment="CENTER" prefHeight="80.0" prefWidth="900.0" style="-fx-background-color: black;">
+                                  <children>
+                                      <Button focusTraversable="false" minWidth="50.0" mnemonicParsing="false" onAction="#home" prefHeight="70.0" prefWidth="302.0" style="-fx-background-color: black;" text="🏠                          " textFill="WHITE">
+                                          <HBox.margin>
+                                              <Insets top="10.0" />
+                                          </HBox.margin>
+                                          <font>
+                                              <Font size="30.0" />
+                                          </font>
+                                      </Button>
+                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="Wordle" textAlignment="CENTER" wrappingWidth="205.1830234527588">
+                                          <font>
+                                              <Font size="52.0" />
+                                          </font>
+                                          <HBox.margin>
+                                              <Insets left="10.0" />
+                                          </HBox.margin>
+                                      </Text>
+                                      <Button fx:id="hintButton" focusTraversable="false" mnemonicParsing="false" onAction="#hint" prefHeight="39.0" prefWidth="100.0" style="-fx-background-color: #242424; -fx-border-color: darkgrey; -fx-border-width: 2;" text="Hint" textFill="WHITE">
+                                          <HBox.margin>
+                                              <Insets left="150.0" right="10.0" top="20.0" />
+                                          </HBox.margin>
+                                          <font>
+                                              <Font size="20.0" />
+                                          </font>
+                                      </Button>
+                              <Button fx:id="hintHelpButton" focusTraversable="false" mnemonicParsing="false" onAction="#displayHintHelp" prefHeight="39.0" prefWidth="48.0" style="-fx-background-color: #242424; -fx-border-color: darkgrey; -fx-border-width: 2;" text="?" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </Button>
+                                  </children>
+                              </HBox>
+                              <HBox id="row1" fx:id="row1" alignment="CENTER" prefHeight="70.0" prefWidth="900.0" style="-fx-background-color: black; -fx-text-fill: white;">
+                                  <opaqueInsets>
+                                      <Insets />
+                                  </opaqueInsets>
+                              </HBox>
+                              <HBox id="row2" fx:id="row2" alignment="CENTER" prefHeight="70.0" prefWidth="900.0" style="-fx-background-color: black;">
+                                  <opaqueInsets>
+                                      <Insets />
+                                  </opaqueInsets>
+                              </HBox>
+                              <HBox id="row3" fx:id="row3" alignment="CENTER" prefHeight="70.0" prefWidth="900.0" style="-fx-background-color: black;">
+                                  <opaqueInsets>
+                                      <Insets />
+                                  </opaqueInsets>
+                              </HBox>
+                              <HBox id="row4" fx:id="row4" alignment="CENTER" prefHeight="70.0" prefWidth="900.0" style="-fx-background-color: black;">
+                                  <opaqueInsets>
+                                      <Insets />
+                                  </opaqueInsets>
+                              </HBox>
+                              <HBox id="row5" fx:id="row5" alignment="CENTER" prefHeight="70.0" prefWidth="900.0" style="-fx-background-color: black;">
+                                  <opaqueInsets>
+                                      <Insets />
+                                  </opaqueInsets>
+                              </HBox>
+                              <HBox id="row6" fx:id="row6" alignment="CENTER" prefHeight="80.0" prefWidth="900.0" style="-fx-background-color: black;">
+                                  <opaqueInsets>
+                                      <Insets />
+                                  </opaqueInsets>
+                              </HBox>
+                              <HBox id="keyRow1" fx:id="keyRow1" alignment="CENTER" prefHeight="62.0" prefWidth="900.0" style="-fx-background-color: black;" />
+                              <HBox id="keyRow2" fx:id="keyRow2" alignment="CENTER" prefHeight="62.0" prefWidth="900.0" style="-fx-background-color: black;" />
+                              <HBox id="keyRow3" fx:id="keyRow3" alignment="CENTER" prefHeight="63.0" prefWidth="900.0" style="-fx-background-color: black;" />
+                          </children>
+                      </VBox>
+                      <AnchorPane fx:id="gameGrayOut" opacity="0.75" prefHeight="713.0" prefWidth="900.0" style="-fx-background-color: black;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                      <AnchorPane fx:id="endDialog" layoutX="289.0" layoutY="139.0" style="-fx-background-color: black; -fx-border-color: white; -fx-border-width: 5px;" visible="false" AnchorPane.bottomAnchor="-200.0" AnchorPane.leftAnchor="-170.0" AnchorPane.rightAnchor="-170.0" AnchorPane.topAnchor="-200.0">
+                          <children>
+                        <HBox alignment="CENTER" layoutY="341.0" prefHeight="91.0" prefWidth="312.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="300.0">
+                           <children>
+                                    <Button focusTraversable="false" mnemonicParsing="false" onAction="#reviewButtonHit" prefHeight="54.0" prefWidth="90.0" style="-fx-background-color: black; -fx-border-color: darkgray; -fx-border-width: 2;" text="Review" textFill="WHITE">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                                    <Button focusTraversable="false" mnemonicParsing="false" onAction="#newGameButtonHit" prefHeight="54.0" prefWidth="90.0" style="-fx-background-color: black; -fx-border-color: darkgray; -fx-border-width: 2;" text="New Game" textFill="WHITE" />
+                                    <Button focusTraversable="false" mnemonicParsing="false" onAction="#exitButtonHit" prefHeight="54.0" prefWidth="90.0" style="-fx-background-color: black; -fx-border-color: darkgray; -fx-border-width: 2;" text="Exit" textFill="WHITE">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                              <Label fx:id="endDialogHeading" alignment="CENTER" layoutX="10.0" layoutY="28.0" prefHeight="18.0" prefWidth="302.0" text="Label" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0" />
+                              <Label fx:id="endDialogContent" alignment="CENTER" layoutX="10.0" layoutY="109.0" prefWidth="302.0" text="Label" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0" />
+                          </children>
+                      </AnchorPane>
+                  </children>
+              </AnchorPane>
+              <AnchorPane fx:id="adminBox" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: black;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="590.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                            <Button mnemonicParsing="false" onAction="#goHome" style="-fx-background-color: black; -fx-border-color: darkgrey; -fx-border-width: 2;" text="🏠" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="30.0" top="30.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="setVocabButton" focusTraversable="false" mnemonicParsing="false" onAction="#setVocabFileButton" style="-fx-background-color: black; -fx-border-color: darkgrey; -fx-border-width: 2;" text="Upload Vocab" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="700.0" top="30.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Most Guessed Words" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                                  <ListView fx:id="topWordsList" prefHeight="433.0" prefWidth="200.0" style="-fx-background-color: black;" />
+                           </children>
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Most Guessed Letters" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                                  <ListView fx:id="topLettersList" prefHeight="448.0" prefWidth="200.0" style="-fx-background-color: black;" />
+                           </children>
+                        </VBox>
+                        <VBox fx:id="selectFileBox" alignment="TOP_CENTER" prefHeight="427.0" prefWidth="127.0">
+                           <children>
+                              <Label text="General File" textFill="WHITE" />
+                              <ChoiceBox fx:id="generalFileSelect" onMouseClicked="#generalSelect" prefWidth="150.0">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </ChoiceBox>
+                              <Label text="Target File" textFill="WHITE" />
+                              <ChoiceBox fx:id="targetFileSelect" onInputMethodTextChanged="#targetSelect" onMouseClicked="#targetSelect" prefWidth="150.0">
+                                  <VBox.margin>
+                                      <Insets bottom="20.0" />
+                                  </VBox.margin>
+                              </ChoiceBox>
+                              <Label text="Select Word Length" textFill="WHITE" />
+                              <ChoiceBox fx:id="wordLengthSelect" prefWidth="150.0">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </ChoiceBox>
+                              <Button fx:id="applyVocab" mnemonicParsing="false" onAction="#applyVocab" text="Apply">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Label text="Set Admin" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <ChoiceBox fx:id="adminAccountSelect" prefWidth="150.0">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </ChoiceBox>
+                              <Button fx:id="setAdminButton" disable="true" mnemonicParsing="false" onAction="#setAdminButtonPressed" text="Set Admin" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  </children>
+              </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</View>

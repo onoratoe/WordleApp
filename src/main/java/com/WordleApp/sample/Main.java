@@ -11,16 +11,19 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import static com.gluonhq.charm.glisten.application.AppManager.HOME_VIEW;
+import static com.gluonhq.charm.glisten.application.AppManager.SPLASH_VIEW;
 
 public class Main extends Application {
 
     public static final String MAIN_VIEW = HOME_VIEW;
+    public static final String SECOND_VIEW = SPLASH_VIEW;
 
     private final AppManager appManager = AppManager.initialize(this::postInit);
 
     @Override
     public void init() {
         appManager.addViewFactory(MAIN_VIEW, () -> new MainView().getView());
+        appManager.addViewFactory(SECOND_VIEW, () -> new SecondView().getView());
 
         DrawerManager.buildDrawer(appManager);
     }

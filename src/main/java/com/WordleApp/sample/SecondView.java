@@ -1,15 +1,16 @@
 package com.WordleApp.sample;
 
 import com.gluonhq.charm.glisten.mvc.View;
-import java.util.ResourceBundle;
-import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 
-public class MainView {
+import java.io.IOException;
+import java.util.ResourceBundle;
+
+public class SecondView {
 
     public View getView() {
         try {
-            View view = FXMLLoader.load(MainView.class.getResource("MainMenu.fxml"), ResourceBundle.getBundle("com.WordleApp.sample.main"));
+            View view = FXMLLoader.load(SecondView.class.getResource("GameScreen.fxml"), ResourceBundle.getBundle("com.WordleApp.sample.main"));
             return view;
         } catch (IOException e) {
             System.out.println("IOException: " + e);
