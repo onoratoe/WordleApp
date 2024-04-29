@@ -13,6 +13,7 @@ import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 import javafx.scene.image.Image;
 
 import static com.WordleApp.sample.Home.MAIN_VIEW;
+import static com.WordleApp.sample.Home.SECOND_VIEW;
 
 public class DrawerManager {
 
@@ -27,8 +28,8 @@ public class DrawerManager {
         final Item mainItem = new ViewItem("Primary", MaterialDesignIcon.HOME.graphic(), MAIN_VIEW, ViewStackPolicy.SKIP);
         drawer.getItems().addAll(mainItem);
 
-        //final Item secondItem = new ViewItem("Secondary", MaterialDesignIcon.HOME.graphic(), SECOND_VIEW, ViewStackPolicy.SKIP);
-        //drawer.getItems().addAll(secondItem);
+        final Item secondItem = new ViewItem("Secondary", MaterialDesignIcon.HOME.graphic(), SECOND_VIEW, ViewStackPolicy.SKIP);
+        drawer.getItems().addAll(secondItem);
 
         if (Platform.isDesktop()) {
             final Item quitItem = new Item("Quit", MaterialDesignIcon.EXIT_TO_APP.graphic());
