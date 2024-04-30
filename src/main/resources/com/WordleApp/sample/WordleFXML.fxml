@@ -267,18 +267,18 @@
                             </HBox>
                             <HBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="900.0" style="-fx-background-color: black;">
                                 <children>
-                                    <Button focusTraversable="false" mnemonicParsing="false" onAction="#help" prefHeight="54.0" prefWidth="99.0" style="-fx-background-color: black; -fx-border-width: 2; -fx-border-color: darkgrey;" text="How To Play" textFill="WHITE">
+                                    <Button focusTraversable="false" mnemonicParsing="false" onAction="#help" prefHeight="54.0" prefWidth="99.0" style="-fx-background-color: black; -fx-border-width: 2; -fx-border-color: darkgrey; -fx-text-fill: white;" text="How To Play" textFill="WHITE">
                                         <HBox.margin>
                                             <Insets right="10.0" />
                                         </HBox.margin>
                                     </Button>
-                                    <Button fx:id="logInOpenButton" focusTraversable="false" mnemonicParsing="false" onAction="#logInOpen" prefHeight="54.0" prefWidth="99.0" style="-fx-background-color: black; -fx-border-width: 2; -fx-border-color: darkgrey;" text="Log in" textFill="WHITE">
+                                    <Button fx:id="logInOpenButton" focusTraversable="false" mnemonicParsing="false" onAction="#logInOpen" prefHeight="54.0" prefWidth="99.0" style="-fx-background-color: black; -fx-border-width: 2; -fx-border-color: darkgrey; -fx-text-fill: white;" text="Log in" textFill="WHITE">
                                         <HBox.margin>
                                             <Insets right="10.0" />
                                         </HBox.margin>
                                     </Button>
-                                    <Button focusTraversable="false" mnemonicParsing="false" onAction="#play" prefHeight="54.0" prefWidth="99.0" style="-fx-background-color: black; -fx-border-width: 2; -fx-border-color: darkgrey;" text="Play" textFill="WHITE" />
-                                    <Button focusTraversable="false" mnemonicParsing="false" onAction="#adminMenuButton" prefHeight="54.0" prefWidth="99.0" style="-fx-background-color: black; -fx-border-color: darkgray; -fx-border-width: 2;" text="Stats" textFill="WHITE">
+                                    <Button focusTraversable="false" mnemonicParsing="false" onAction="#play" prefHeight="54.0" prefWidth="99.0" style="-fx-background-color: black; -fx-border-width: 2; -fx-border-color: darkgrey; -fx-text-fill: white;" text="Play" textFill="WHITE" />
+                                    <Button focusTraversable="false" mnemonicParsing="false" onAction="#adminMenuButton" prefHeight="54.0" prefWidth="99.0" style="-fx-background-color: black; -fx-border-color: darkgray; -fx-border-width: 2; -fx-text-fill: white;" text="Stats" textFill="WHITE">
                                         <HBox.margin>
                                             <Insets left="10.0" />
                                         </HBox.margin>

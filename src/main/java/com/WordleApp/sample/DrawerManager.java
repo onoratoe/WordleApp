@@ -25,10 +25,10 @@ public class DrawerManager {
                 new Avatar(21, new Image(DrawerManager.class.getResourceAsStream("/icon.png"))));
         drawer.setHeader(header);
 
-        final Item mainItem = new ViewItem("Primary", MaterialDesignIcon.HOME.graphic(), MAIN_VIEW, ViewStackPolicy.SKIP);
+        final Item mainItem = new ViewItem("Main Menu", MaterialDesignIcon.HOME.graphic(), MAIN_VIEW, ViewStackPolicy.SKIP);
         drawer.getItems().addAll(mainItem);
 
-        final Item secondItem = new ViewItem("Secondary", MaterialDesignIcon.HOME.graphic(), SECOND_VIEW, ViewStackPolicy.SKIP);
+        final Item secondItem = new ViewItem("Game", MaterialDesignIcon.HOME.graphic(), SECOND_VIEW, ViewStackPolicy.SKIP);
         drawer.getItems().addAll(secondItem);
 
         if (Platform.isDesktop()) {

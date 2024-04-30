@@ -3,8 +3,10 @@
 <?import com.gluonhq.charm.glisten.mvc.View?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -13,54 +15,173 @@
 
 <View fx:id="main" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="595.0" prefWidth="899.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.WordleApp.sample.Controller">
    <center>
-    <VBox id="logInBox" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
-        <children>
-            <HBox alignment="CENTER" style="-fx-background-color: black;">
-                <children>
-                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Wordle" textAlignment="CENTER" wrappingWidth="215.58308029174805">
-                        <font>
-                            <Font size="52.0" />
-                        </font>
-                    </Text>
-                </children>
-                <padding>
-                    <Insets top="15.0" />
-                </padding>
-            </HBox>
-            <HBox alignment="CENTER" style="-fx-background-color: black;">
-                <children>
-                    <ImageView id="logo" fx:id="logo" fitHeight="475.0" fitWidth="397.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../images/TheYorkTimesLogo.png" />
-                     </image></ImageView>
-                </children>
-            </HBox>
-            <HBox alignment="TOP_CENTER" prefHeight="110.0" prefWidth="899.0" style="-fx-background-color: black;">
-                <children>
-                    <Button focusTraversable="false" mnemonicParsing="false" onAction="#help" prefHeight="54.0" prefWidth="99.0" style="-fx-background-color: black; -fx-border-width: 2; -fx-border-color: darkgrey;" text="How To Play" textFill="WHITE">
-                        <HBox.margin>
-                            <Insets right="10.0" />
-                        </HBox.margin>
-                    </Button>
-                    <Button focusTraversable="false" mnemonicParsing="false" onAction="#logInOpen" prefHeight="54.0" prefWidth="99.0" style="-fx-background-color: black; -fx-border-width: 2; -fx-border-color: darkgrey;" text="Log in" textFill="WHITE">
-                        <HBox.margin>
-                            <Insets right="10.0" />
-                        </HBox.margin>
-                    </Button>
-                    <Button focusTraversable="false" mnemonicParsing="false" onAction="#play" prefHeight="54.0" prefWidth="99.0" style="-fx-background-color: black; -fx-border-width: 2; -fx-border-color: darkgrey;" text="Play" textFill="WHITE" />
-                    <Button focusTraversable="false" mnemonicParsing="false" onAction="#adminMenuButton" prefHeight="54.0" prefWidth="99.0" style="-fx-background-color: black; -fx-border-color: darkgray; -fx-border-width: 2;" text="Admin Panel" textFill="WHITE">
-                        <HBox.margin>
-                            <Insets left="10.0" />
-                        </HBox.margin>
-                    </Button>
-                </children>
-            </HBox>
-            <HBox alignment="TOP_CENTER" prefHeight="125.0" prefWidth="900.0">
-                <children>
-                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Created By: Estevan Onorato, Eric Van Zant, Dominic Zagra, and Daniel Portwine" textAlignment="CENTER" wrappingWidth="899.1296066045761" />
-                </children>
-            </HBox>
-        </children>
-    </VBox>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <children>
+          <VBox id="logInBox" fx:id="homeBox" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <children>
+                  <HBox alignment="CENTER" style="-fx-background-color: black;">
+                      <children>
+                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Wordle" textAlignment="CENTER" wrappingWidth="215.58308029174805">
+                              <font>
+                                  <Font size="52.0" />
+                              </font>
+                          </Text>
+                      </children>
+                      <padding>
+                          <Insets top="15.0" />
+                      </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" style="-fx-background-color: black;">
+                      <children>
+                          <ImageView id="logo" fx:id="logo" fitHeight="475.0" fitWidth="397.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/TheYorkTimesLogo.png" />
+                           </image>
+                        </ImageView>
+                      </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="110.0" prefWidth="899.0" style="-fx-background-color: black;">
+                      <children>
+                          <Button focusTraversable="false" mnemonicParsing="false" onAction="#help" prefHeight="54.0" prefWidth="99.0" style="-fx-background-color: black; -fx-border-width: 2; -fx-border-color: darkgrey; -fx-text-fill: white;" text="How To Play" textFill="WHITE">
+                              <HBox.margin>
+                                  <Insets right="10.0" />
+                              </HBox.margin>
+                          </Button>
+                          <Button focusTraversable="false" mnemonicParsing="false" onAction="#logInOpen" prefHeight="54.0" prefWidth="99.0" style="-fx-background-color: black; -fx-border-width: 2; -fx-border-color: darkgrey; -fx-text-fill: white;" text="Log in" textFill="WHITE">
+                              <HBox.margin>
+                                  <Insets right="10.0" />
+                              </HBox.margin>
+                          </Button>
+                          <Button focusTraversable="false" mnemonicParsing="false" onAction="#play" prefHeight="54.0" prefWidth="99.0" style="-fx-background-color: black; -fx-border-width: 2; -fx-border-color: darkgrey; -fx-text-fill: white;" text="Play" textFill="WHITE" />
+                          <Button focusTraversable="false" mnemonicParsing="false" onAction="#adminMenuButton" prefHeight="54.0" prefWidth="99.0" style="-fx-background-color: black; -fx-border-color: darkgray; -fx-border-width: 2; -fx-text-fill: white;" text="Admin Panel" textFill="WHITE">
+                              <HBox.margin>
+                                  <Insets left="10.0" />
+                              </HBox.margin>
+                          </Button>
+                      </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="125.0" prefWidth="900.0">
+                      <children>
+                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Created By: Estevan Onorato, Eric Van Zant, Dominic Zagra, and Daniel Portwine" textAlignment="CENTER" wrappingWidth="899.1296066045761" />
+                      </children>
+                  </HBox>
+              </children>
+          </VBox>
+            <VBox id="helpBox" fx:id="helpBox" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="80.0" prefWidth="900.0" style="-fx-background-color: black;">
+                     <children>
+                        <Button minWidth="50.0" mnemonicParsing="false" onAction="#home" prefHeight="70.0" prefWidth="275.0" style="-fx-background-color: black; -fx-text-fill: white;" text="🏠                  " textFill="WHITE">
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Button>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="How To Play" textAlignment="CENTER" wrappingWidth="320.0">
+                           <font>
+                              <Font size="52.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" right="300.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="900.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="The Goal is to guess the Wordle in 6 tries">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="17.0" prefWidth="900.0">
+                     <children>
+                        <TextField alignment="TOP_LEFT" editable="false" focusTraversable="false" prefHeight="17.0" prefWidth="800.0" style="-fx-text-fill: white; -fx-background-color: black;" text="Each guess has to be a valid guess, based on our dicitonary">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="42.0" prefWidth="900.0">
+                     <children>
+                        <TextField alignment="TOP_LEFT" editable="false" focusTraversable="false" prefHeight="34.0" prefWidth="800.0" style="-fx-text-fill: white; -fx-background-color: black;" text="For each Correct letter guessed, the color of the tiles will change based on that guess">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="661.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="For Example" wrappingWidth="168.68988037109375">
+                           <font>
+                              <Font name="System Italic" size="30.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="60.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="451.0" prefWidth="338.0">
+                     <children>
+                        <ImageView id="gameExample" fx:id="gameExample" fitHeight="441.0" fitWidth="398.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/GameExample.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ImageView>
+                        <VBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="450.0">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Assuming You entered a Vaild word" textAlignment="CENTER" wrappingWidth="400.0">
+                                 <VBox.margin>
+                                    <Insets bottom="30.0" top="20.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Gray means that the letter guessed is not in the word" textAlignment="CENTER" wrappingWidth="400.0">
+                                 <VBox.margin>
+                                    <Insets bottom="30.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Yellow means that the letter guessed is in the word, but its not in the correct location" textAlignment="CENTER" wrappingWidth="400.0">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="30.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Green means that the letter is in the word, and it's in the correct location" textAlignment="CENTER" wrappingWidth="400.0">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="30.0" />
+                                 </VBox.margin>
+                              </Text>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
    </center>
 </View>

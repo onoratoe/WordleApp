@@ -7,8 +7,6 @@ import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -22,12 +20,10 @@ import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Popup;
 
-import javax.swing.plaf.basic.BasicOptionPaneUI;
 import java.io.*;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
-import java.sql.SQLOutput;
 import java.util.*;
 
 /**
@@ -35,7 +31,7 @@ import java.util.*;
  * @version 1.0
  * @created 13-Feb-2024 4:30:19 PM
  */
-public class Controller {
+public class AdminController {
 	@FXML
 	public AnchorPane anchor;
 	@FXML
