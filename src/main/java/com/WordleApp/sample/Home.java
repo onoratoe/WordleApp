@@ -17,7 +17,6 @@ public class Home extends Application {
 
     public static final String MAIN_VIEW = HOME_VIEW;
     public static final String SECOND_VIEW = SPLASH_VIEW;
-    public static final String ADMIN_VIEW = SPLASH_VIEW;
 
     private final AppManager appManager = AppManager.initialize(this::postInit);
 
@@ -25,7 +24,6 @@ public class Home extends Application {
     public void init() {
         appManager.addViewFactory(MAIN_VIEW, () -> new HomeView().getView());
         appManager.addViewFactory(SECOND_VIEW, () -> new GameView().getView());
-
         DrawerManager.buildDrawer(appManager);
     }
 

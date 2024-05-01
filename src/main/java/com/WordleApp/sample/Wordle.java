@@ -39,9 +39,6 @@ public class Wordle extends Application {
 		scene = new Scene(root);
 		scene.getRoot().requestFocus();
 		controller = fxmlLoader.getController();
-		controller.setup(game);
-		controller.addListeners();
-		scene.setOnKeyPressed(((Controller) fxmlLoader.getController()).keyListener);
 
 		Thread cleanHook = new Thread(Wordle::shutDownCleaner);
 		Runtime.getRuntime().addShutdownHook(cleanHook);
