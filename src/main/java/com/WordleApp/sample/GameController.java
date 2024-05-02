@@ -6,10 +6,8 @@ import com.gluonhq.charm.glisten.mvc.View;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -82,6 +80,12 @@ public class GameController {
 		});
 	}
 
+	@FXML
+	public void goHome(){
+		AppBar appBar = AppManager.getInstance().getAppBar();
+		appBar.setNavIcon(MaterialDesignIcon.MENU.button(e -> AppManager.getInstance().getDrawer().open()));
+		appBar.setTitleText("WordleApp");
+	}
 
 	private void keyInput(String input){
         if (!currentGame.getGameEnded()) {

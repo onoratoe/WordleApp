@@ -30,9 +30,6 @@ public class GameInstance {
 	private boolean victory = false;
 	private boolean gameEnded = false;
 	private boolean hintUsed = false;
-
-
-	public Wordle m_Wordle;
 	public Controller m_Controller;
 	public Word m_Word;
 	public Letter m_Letter;
