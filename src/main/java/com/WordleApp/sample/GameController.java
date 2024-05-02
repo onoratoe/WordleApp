@@ -90,6 +90,7 @@ public class GameController {
                     if (!inputStack.isEmpty()) inputStack.pop();
                     backSpaceRow();
                 }
+				break;
                 case "ENTER": {
                     if (inputStack.size() == currentGame.getTarget().length() && gameStep() != -1) {
                         inputStack.clear();
@@ -99,6 +100,7 @@ public class GameController {
                         }
                     }
                 }
+				break;
                 case "BACK_SPACE": {
                     if (!inputStack.isEmpty()) inputStack.pop();
                     backSpaceRow();
@@ -134,7 +136,6 @@ public class GameController {
 	 */
 	@FXML
 	private void hint(){
-
 		while (!inputStack.isEmpty()){
 			inputStack.pop();
 			backSpaceRow();
